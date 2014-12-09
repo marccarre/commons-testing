@@ -6,7 +6,7 @@ Features:
   - JUnit rule for log capture via SLF4J (with bindings for log4j, log4j2 and logback).
   - Hamcrest matcher for throwables.
 
-Latest version (from either [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Ccom.carmatechnologies.maven) or [OSS Sonatype](https://oss.sonatype.org/#nexus-search;quick~com.carmatechnologies.maven)):
+Latest version (from either [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Ccom.carmatechnologies.commons) or [OSS Sonatype](https://oss.sonatype.org/#nexus-search;quick~com.carmatechnologies.commons)):
 
     
     <dependency>
