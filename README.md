@@ -10,8 +10,8 @@ Latest version (from either [Maven Central](http://search.maven.org/#search%7Cga
 
     
     <dependency>
-      <groupId>com.carmatechnologies.maven</groupId>
-      <artifactId>properties-files-maven-plugin</artifactId>
+      <groupId>com.carmatechnologies.commons</groupId>
+      <artifactId>commons-testing</artifactId>
       <version>1.0</version>
     </dependency>
     
