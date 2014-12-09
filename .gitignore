@@ -1,12 +1,47 @@
+## Windows and OSX:
+Thumbs.db
+.DS_Store
+
+## Eclipse:
+.classpath
+.project
+.settings/
+.metadata/
+
+## IntelliJ:
+.idea/
+*.iml
+*.ipr
+*.iws
+
+## Maven:
+target/
+
+## Gradle:
+.gradle/
+build/
+gradle-app.setting
+
+## Java:
 *.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.ear
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+## Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+## virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+## Python:
+*.pyc
+
+## Python/virtualenv:
+.Python
+bin/
+include/
+lib/
+
+## Python/coverage:
+.coverage
