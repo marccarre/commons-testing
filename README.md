@@ -43,8 +43,8 @@ Example:
             assertThat(logs.size(), is(0));
 
             // Logic using the class you are capturing logs for:
-            ATM model = new ATM(90);
-            assertThat(model.withdraw(100), is(90));
+            ATM atm = new ATM(90);
+            assertThat(atm.withdraw(100), is(90));
 
             // Assert content of the logs:
             assertThat(logs.isEmpty(), is(false));
