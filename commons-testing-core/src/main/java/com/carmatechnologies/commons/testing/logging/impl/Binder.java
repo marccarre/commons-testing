@@ -37,7 +37,7 @@ public final class Binder {
     }
 
     private static Set<URL> findLogCapturerFactoryInClasspath() throws IOException {
-        final Set<URL> paths = new LinkedHashSet<>();
+        final Set<URL> paths = new LinkedHashSet<URL>();
         final Enumeration<URL> resources = scanClassPath();
         while (resources.hasMoreElements()) {
             paths.add(resources.nextElement());

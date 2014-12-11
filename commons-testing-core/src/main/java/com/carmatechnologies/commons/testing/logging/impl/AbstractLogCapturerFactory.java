@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public abstract class AbstractLogCapturerFactory implements ILogCapturerFactory {
-    private final ConcurrentMap<String, ILogCapturer> capturers = new ConcurrentHashMap<>();
+    private final ConcurrentMap<String, ILogCapturer> capturers = new ConcurrentHashMap<String, ILogCapturer>();
 
     @Override
     public ILogCapturer createFor(final Class<?> type, final LogLevel logLevel, final boolean isAdditive, final Collection<String> logs) {
