@@ -177,10 +177,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <!-- <configuration>
-                    <parallel>both</parallel>
-                    <threadCount>8</threadCount>
-                </configuration> -->
+                <configuration>
+                    <argLine>-Xmx1024m</argLine>
+                    <!-- <parallel>both</parallel>
+                    <threadCount>8</threadCount> -->
+                </configuration>
             </plugin>
 
             <!-- Code Coverage -->
