@@ -4,6 +4,7 @@ import org.apache.logging.log4j.core.Appender;
 import org.apache.logging.log4j.core.ErrorHandler;
 import org.apache.logging.log4j.core.Layout;
 import org.apache.logging.log4j.core.LogEvent;
+import org.apache.logging.log4j.core.appender.AbstractAppender;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -11,16 +12,17 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import static com.carmatechnologies.commons.testing.utils.Preconditions.checkNotNull;
 
-public class Log4j2CollectionAppender implements Appender {
+public class Log4j2CollectionAppender extends AbstractAppender implements Appender {
     private static final AtomicLong counter = new AtomicLong(0L);
-    private volatile boolean isStarted = true;
-
+    private volatile State state = State.INITIALIZING;
     private final Collection<String> logs;
-    private final String name;
 
     public Log4j2CollectionAppender(final Collection<String> logs) {
+        super(
+                Log4j2CollectionAppender.class.getCanonicalName() + "-" + counter.incrementAndGet(),
+                null, null, true, null
+        );
         this.logs = checkNotNull(logs, "Log statements queue must NOT be null.");
-        this.name = Log4j2CollectionAppender.class.getCanonicalName() + "-" + counter.incrementAndGet();
     }
 
     @Override
@@ -29,47 +31,27 @@ public class Log4j2CollectionAppender implements Appender {
     }
 
     @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public Layout<? extends Serializable> getLayout() {
-        throw new UnsupportedOperationException("Not implemented");
-    }
-
-    @Override
-    public boolean ignoreExceptions() {
-        throw new UnsupportedOperationException("Not implemented");
-    }
-
-    @Override
-    public ErrorHandler getHandler() {
-        throw new UnsupportedOperationException("Not implemented");
-    }
-
-    @Override
-    public void setHandler(final ErrorHandler errorHandler) {
-        throw new UnsupportedOperationException("Not implemented");
+    public void initialize() {
+        state = State.INITIALIZED;
     }
 
     @Override
     public void start() {
-        isStarted = true;
+        state = State.STARTED;
     }
 
     @Override
     public void stop() {
-        isStarted = false;
+        state = State.STOPPED;
     }
 
     @Override
     public boolean isStarted() {
-        return isStarted;
+        return state == State.STARTED;
     }
 
     @Override
     public boolean isStopped() {
-        return !isStarted;
+        return state == State.STOPPED;
     }
 }
