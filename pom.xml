@@ -32,7 +32,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java-version>1.6</java-version>
+        <java-version>1.7</java-version>
 
         <oss-sonatype-url>https://oss.sonatype.org</oss-sonatype-url>
         <git-repo-ssh-url>git@github.com:marccarre/commons-testing.git</git-repo-ssh-url>
