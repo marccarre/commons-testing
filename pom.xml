@@ -46,7 +46,7 @@
 
         <maven-compiler-plugin-version>3.2</maven-compiler-plugin-version>
         <maven-surefire-plugin-version>2.18</maven-surefire-plugin-version>
-        <jacoco-maven-plugin-version>0.7.2.201409121644</jacoco-maven-plugin-version>
+        <jacoco-maven-plugin-version>0.8.6</jacoco-maven-plugin-version>
         <coveralls-maven-plugin-version>4.3.0</coveralls-maven-plugin-version>
         <nexus-staging-maven-plugin-version>1.6.5</nexus-staging-maven-plugin-version>
         <maven-source-plugin-version>2.4</maven-source-plugin-version>
