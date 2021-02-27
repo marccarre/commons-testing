@@ -32,7 +32,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java-version>1.6</java-version>
+        <java-version>1.7</java-version>
 
         <oss-sonatype-url>https://oss.sonatype.org</oss-sonatype-url>
         <git-repo-ssh-url>git@github.com:marccarre/commons-testing.git</git-repo-ssh-url>
@@ -45,9 +45,8 @@
         <junit-version>4.13.1</junit-version>
 
         <maven-compiler-plugin-version>3.2</maven-compiler-plugin-version>
-        <maven-surefire-plugin-version>2.18</maven-surefire-plugin-version>
-        <jacoco-maven-plugin-version>0.7.2.201409121644</jacoco-maven-plugin-version>
-        <coveralls-maven-plugin-version>3.0.1</coveralls-maven-plugin-version>
+        <jacoco-maven-plugin-version>0.8.6</jacoco-maven-plugin-version>
+        <coveralls-maven-plugin-version>4.3.0</coveralls-maven-plugin-version>
         <nexus-staging-maven-plugin-version>1.6.5</nexus-staging-maven-plugin-version>
         <maven-source-plugin-version>2.4</maven-source-plugin-version>
         <maven-javadoc-plugin-version>2.10.1</maven-javadoc-plugin-version>
@@ -173,17 +172,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Testing -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <argLine>-Xmx1024m</argLine>
-                    <!-- <parallel>both</parallel>
-                    <threadCount>8</threadCount> -->
-                </configuration>
-            </plugin>
-
             <!-- Code Coverage -->
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -220,11 +208,6 @@
                     <version>${maven-compiler-plugin-version}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${maven-surefire-plugin-version}</version>
-                </plugin>
-                <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${jacoco-maven-plugin-version}</version>
@@ -233,6 +216,13 @@
                     <groupId>org.eluder.coveralls</groupId>
                     <artifactId>coveralls-maven-plugin</artifactId>
                     <version>${coveralls-maven-plugin-version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>javax.xml.bind</groupId>
+                            <artifactId>jaxb-api</artifactId>
+                            <version>2.2.4</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
